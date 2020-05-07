@@ -9,6 +9,7 @@
     <link rel="icon" href="images/markk.png">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,9 +22,13 @@
                     <P class="title">The Names in the Hat Game</P>
                     <P class="lock">[Lockdown Edition]</P>
                 </div>
-                <br>
+                <hr>
+                <div class="clock">Time <span class="timer-view">00:00</span></div>
+                <button class="start btn btn-primary">start!</button>
+                <button class="reset btn btn-info">reset</button>
+                <hr>
                 <button id="Button" type="button" class="btn btn-warning">
-                      GO
+                      NAMES!!
                 </button>
                 <br>
                 <br>
@@ -35,6 +40,8 @@
                 <a href="submit.html" class="btn btn-success">
                       Add Names
                 </a>
+                <br>
+                <br>
             </div>
         </div>
     </div>
@@ -75,6 +82,57 @@
         }
     }
 </script>
+
+<script>
+    const timeView = document.querySelector('.timer-view');
+    const start = document.querySelector('.start');
+    const moreTime = document.querySelector('.add');
+    const reset = document.querySelector('.reset');
+
+    start.addEventListener('click', function() {
+        Countdown(60);
+    });
+
+    moreTime.addEventListener('click', function() {
+        AddTime(5);
+    });
+
+    reset.addEventListener('click', function() {
+        timeView.textContent = '00:00';
+        clearTimeout(stopTime);
+    });
+
+
+    function Countdown(seconds) {
+        this.sec = seconds;
+        this.mins = seconds > 60 ? seconds / 60 : 0;
+
+        tick();
+
+        function tick() {
+            if (this.sec > 60) {
+                this.current_minutes = mins - 1;
+            }
+            this.sec--;
+            timeView.textContent = (!this.mins ? '00' : this.current_minutes.toString()) + ':' + (this.sec < 10 ? '0' : '') + String(this.sec);
+            if (this.sec > 0) {
+                stopTime = setTimeout(tick, 1000);
+            }
+            else {
+                if (this.mins > 1) {
+                    countdown(this.mins - 1);
+                }
+            }
+        }
+    }
+
+    function AddTime(seconds) {
+        clearTimeout(stopTime);
+        Countdown.call(this.sec, seconds);
+        sec = this.sec + seconds;
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
