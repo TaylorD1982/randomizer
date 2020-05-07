@@ -1,0 +1,17 @@
+.app {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.result {
+    padding-top: 50px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 5em;
+}
+
+.btn {
+    width: 150px;
+    height: 100px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 3em;
+}
