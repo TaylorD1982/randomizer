@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Names in the Hat Game</title>
+    <link rel="icon" href="images/markk.png">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- EmailJS Javascript -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_UbfQMZPiQGURDwMtv5SCI");
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row app2">
+            <div class="col">
+                <div>
+                    <P class="title">Submit Your Names</P>
+                </div>
+                <br>
+                <br>
+                <br>
+                <form onsubmit="return sendMail(this);">
+                    <div class="form-group">
+                        <input type="text" name="name1" class="form-control" id="fullname" placeholder="Name #1" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name2" class="form-control" id="fullname" placeholder="Name #2" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function sendMail(contactForm) {
+        emailjs.send("gmail_new", "football_site", {
+                "from_name1": contactForm.name1.value,
+                "from_name2": contactForm.name2.value,
+            })
+            .then(
+                function(response) {
+                    alert("Your email has been sent", response);
+                    window.location.href = "/";
+                },
+                function(error) {
+                    alert("Your email was not sent. Please try again later", error);
+                    window.location.href = "/";
+                }
+            );
+        return false;
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
