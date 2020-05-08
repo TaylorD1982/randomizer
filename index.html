@@ -22,20 +22,30 @@
                     <P class="title">The Names in the Hat Game</P>
                     <P class="lock">[Lockdown Edition]</P>
                 </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 timer">
+                            <div class="clock"><span class="timer-view">00:00</span></div>
+                        </div>
+                        <div class="col-6 button1">
+                            <button class="start btn btn-outline-secondary">start!</button>
+                        </div>
+                    </div>
+                </div>
                 <hr>
-                <div class="clock"><span class="timer-view">00:00</span></div>
-                <button class="start btn btn btn-info">start!</button>
-                <hr>
+                <br>
+                <br>
                 <button id="Button" type="button" class="btn btn-warning">
-                      G O ! !
+                      NEXT !!
                 </button>
                 <br>
                 <br>
                 <br>
-                <div id="Answer" class="result">
+                <div id="Answer" class="result border border-secondary rounded">
                     ???
                 </div>
-                <hr>
+                <br>
                 <a href="submit.html" class="btn btn-success">
                       Add Names
                 </a>
@@ -78,7 +88,7 @@
         }
         else {
             alert("GAME OVER!");
-            window.location.href='index.html';
+            window.location.href = 'index.html';
         }
     }
 </script>
