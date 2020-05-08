@@ -1,13 +1,6 @@
 .app {
-    padding-top: 50px;
+    padding-top: 30px;
     text-align: center;
-}
-
-.app2 {
-    padding-top: 50px;
-    text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
 .result {
@@ -30,7 +23,7 @@
 
 @media only screen and (max-width: 600px) {
 .title {
-    font-size: 2em;
+    font-size: 1.4em;
 }}
 
 @media only screen and (max-width: 600px) {
@@ -46,7 +39,7 @@
 @media only screen and (max-width: 600px) {
 .lock {
     font-family: 'Frijole', cursive;
-    font-size: 1.2em;
+    font-size: 0.8em;
 }}
 
 .app3 {
